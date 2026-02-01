@@ -58,7 +58,7 @@ def create_pdf_report(hash_id, score, verdict):
     pdf.set_font("Arial", 'I', 10)
     pdf.multi_cell(0, 10, txt="Ce document atteste que le fichier a été analysé par les algorithmes de détection de GamoudiVerif. L'empreinte numérique garantit que le rapport correspond exactement au fichier soumis.")
     
-    return pdf.output(dest='S').encode('latin-1')
+    return pdf.output()
 
 
 
@@ -110,4 +110,5 @@ if uploaded_file:
             data=pdf_data,
             file_name=f"Certificat_{hash_id[:8]}.pdf",
             mime="application/pdf"
+
         )

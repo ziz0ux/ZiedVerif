@@ -108,7 +108,7 @@ def create_pdf_report(hash_id, zied_score, verdict, type_analysed, signatures):
     if signatures:
         pdf.set_font("helvetica", size=11)
         pdf.cell(0, 10, txt=f"Signatures détectées : {', '.join(signatures)}", ln=True)
-    return bytes(pdf.output())
+    return pdf.output(dest='S')
 
 # --- 4. NAVIGATION ---
 
@@ -234,4 +234,5 @@ elif choice == "À propos":
         .</div>""", unsafe_allow_html=True)
 
 st.divider()
+
 st.caption("© 2026 ZiedVerif Pro - Protections Numériques Avancées")

@@ -1,0 +1,5 @@
+streamlit
+requests
+Pillow
+fpdf
+pdf2image
